@@ -120,13 +120,16 @@ function makeComponent(object) {
   let p1 = document.createElement("p");
   let p2 = document.createElement("p");
   let p3 = document.createElement("p");
+  let read = document.createElement("p");
   let expBttn = document.createElement("span");
 
   container.classList.add("article");
   date.classList.add("date");
   expBttn.classList.add("expandButton");
   expBttn.textContent = "expand/contract";
+  read.classList.add("read");
 
+  read.textContent = "I've read this";
   artcielTitle.textContent = object.title;
   date.textContent = object.date;
   p1.textContent = object.firstParagraph;
@@ -135,13 +138,19 @@ function makeComponent(object) {
 
   container.appendChild(artcielTitle);
   container.appendChild(date);
+  container.appendChild(read);
   container.appendChild(p1);
   container.appendChild(p2);
   container.appendChild(p3);
+
   container.appendChild(expBttn);
 
   expBttn.addEventListener("click", (event) => {
     container.classList.toggle("article-open");
+
+    read.addEventListener("click", (event) => {
+      container.classList.add("gone");
+    });
   });
 
   return container;

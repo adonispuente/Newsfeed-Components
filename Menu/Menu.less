@@ -2,16 +2,8 @@
   position: absolute;
   left: 20px;
   cursor: pointer;
-  animation: pulse 5s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    background-color: #001f3f;
-  }
-  100% {
-    background-color: #ff4136;
-  }
+  animation: pulse 3s ease infinite alternate,
+    nudge 5s linear infinite alternate;
 }
 
 .menu {
@@ -21,7 +13,7 @@
   left: 0;
   width: 350px;
   height: 100vh; /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81c784;
+  background-color: red;
   border: 1px solid #004d40;
   border-left: none;
   border-bottom: none;
@@ -38,4 +30,26 @@
 
 .menu--open {
   display: block;
+}
+
+.element {
+  width: 50px;
+  height: 50px;
+  border: 1px solid grey;
+  animation: pulse 5s infinite;
+}
+
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(150px, 0);
+  }
+
+  // 80% {
+  //   transform: translate(-150px, 0);
+  // }
 }
