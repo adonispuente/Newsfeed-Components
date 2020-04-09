@@ -2,6 +2,8 @@
   position: absolute;
   left: 20px;
   cursor: pointer;
+  animation: pulse 3s ease infinite alternate,
+    nudge 5s linear infinite alternate;
 }
 
 .menu {
@@ -11,14 +13,15 @@
   left: 0;
   width: 350px;
   height: 100vh; /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81C784;
-  border: 1px solid #004D40;
+  background-color: red;
+  border: 1px solid #004d40;
   border-left: none;
   border-bottom: none;
+
   z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
 }
 
-.menu ul li{
+.menu ul li {
   list-style-type: none;
   font-size: 32px;
   padding: 30px 0;
@@ -27,4 +30,26 @@
 
 .menu--open {
   display: block;
+}
+
+.element {
+  width: 50px;
+  height: 50px;
+  border: 1px solid grey;
+  animation: pulse 5s infinite;
+}
+
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(150px, 0);
+  }
+
+  // 80% {
+  //   transform: translate(-150px, 0);
+  // }
 }
