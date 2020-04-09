@@ -100,7 +100,7 @@
   width: 350px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: red;
+  background-color: green;
   border: 1px solid #004d40;
   border-left: none;
   border-bottom: none;
